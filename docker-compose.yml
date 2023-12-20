@@ -1,0 +1,36 @@
+version: '3.8'
+
+services: 
+  front:
+    platform: linux/amd64
+    build:
+      context: ./Yadonisu_frontend/
+    volumes:
+      - ./Yadonisu_frontend/app:/app
+    command: 'yarn dev'
+    ports:
+      - "8080:3000"
+  back:
+    platform: linux/amd64
+    build:
+      context: ./Yadonisu_backend/
+    ports:
+      - 3000:3000
+    volumes:
+      - ./Yadonisu_backend:/app
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_HOST: ${MYSQL_HOST}
+    depends_on:
+      - db
+  db:
+    platform: linux/amd64
+    image: mysql:8.0.33
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    volumes:
+      - "./docker/db:/var/lib/mysql"
