@@ -1,7 +1,6 @@
-/* eslint-disable import/no-unresolved */
 import React from 'react'
 import { FaRegCopyright } from 'react-icons/fa'
-import styles from '@/styles/Footer.module.scss'
+import styles from '../styles/Footer.module.scss'
 
 const Footer = () => {
   return (

@@ -1,9 +1,8 @@
-/* eslint-disable import/no-unresolved */
 import React from 'react'
 import { FiAlignJustify, FiGlobe } from 'react-icons/fi'
 import { IoIosSearch } from 'react-icons/io'
 import { SiAirbnb } from 'react-icons/si'
-import styles from '@/styles/Header.module.scss'
+import styles from '../styles/Header.module.scss'
 
 type HeaderProps = {
   title: string
