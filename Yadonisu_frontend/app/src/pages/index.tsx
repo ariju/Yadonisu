@@ -1,13 +1,27 @@
 import { Inter } from 'next/font/google'
 import Head from 'next/head'
 import Link from 'next/link'
+import React, { useState, useEffect } from 'react'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import styles from '../styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+const Home = () => {
+  const [scrollY, setScrollY] = useState(0)
+
+  const handleScroll = () => {
+    setScrollY(window.scrollY)
+  }
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <>
       <Head>
@@ -17,16 +31,18 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main className={`${styles.main} ${inter.className}`}>
-        <div className={styles.link}>
+        <div id='link' className={styles.link}>
           <div className={styles.link_title}>
             <Link href='/about'>
               Airbnbでゲストから最も好評を得ている宿泊先「ゲストチョイス」とは
             </Link>
           </div>
         </div>
-        <Header title={'Yadonisu'} />
+        <Header isScrolled={scrollY > 73} />
         <Footer />
       </main>
     </>
   )
 }
+
+export default Home

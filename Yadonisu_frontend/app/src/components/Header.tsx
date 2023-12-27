@@ -1,16 +1,16 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { FiAlignJustify, FiGlobe } from 'react-icons/fi'
 import { IoIosSearch } from 'react-icons/io'
 import { SiAirbnb } from 'react-icons/si'
 import styles from '../styles/Header.module.scss'
 
 type HeaderProps = {
-  title: string
+  isScrolled?: boolean
 }
 
-const Header = ({}: HeaderProps) => {
+const Header: FC<HeaderProps> = ({ isScrolled }) => {
   return (
-    <header className={styles._wrapper}>
+    <header className={`${styles._wrapper} ${isScrolled ? styles.scroll : ''}`}>
       <div className={styles._inner}>
         <div className={styles._logo}>
           <SiAirbnb className={styles._icon_airbub} />
