@@ -41,7 +41,7 @@ const Home = () => {
         </div>
         <Header isScrolled={scrollY > 73} />
         <div className={styles.Breadcrumb}>
-          <MultiViewSummary />
+          <MultiViewSummary isScrolled={scrollY > 73} title={''} />
         </div>
         <Footer />
       </main>

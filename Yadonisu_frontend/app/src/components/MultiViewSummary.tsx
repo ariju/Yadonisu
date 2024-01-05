@@ -1,14 +1,20 @@
 import Image from 'next/image'
+import React, { FC, useState } from 'react'
+import { FaFilter } from 'react-icons/fa'
 import { FiArrowLeftCircle, FiArrowRightCircle } from 'react-icons/fi'
 import { Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import styles from '../styles/MultiViewSummary.module.scss'
-
 interface ImagesItem {
   title: string
   icon: string
+}
+
+type HeaderProps = {
+  title: string
+  isScrolled?: boolean
 }
 
 const images: ImagesItem[] = [
@@ -73,26 +79,26 @@ const images: ImagesItem[] = [
   { title: 'ビーチ', icon: '/hebi.jpg' },
 ]
 
-export default function MultiViewSummary() {
+const MultiViewSummary: FC<HeaderProps> = ({ isScrolled }) => {
   const slideSettings = {
     0: {
       slidesPerView: 4,
-      spaceBetween: 5,
+      spaceBetween: 0,
     },
     1024: {
-      slidesPerView: 8,
-      spaceBetween: 5,
+      slidesPerView: 10,
+      spaceBetween: 0,
     },
   }
 
   return (
-    <div className={styles.slider__wrapper}>
+    <div className={`${styles.slider__wrapper} ${isScrolled ? styles.scroll : ''}`}>
       <Swiper
         modules={[Navigation, Pagination]}
         breakpoints={slideSettings} // slidesPerViewを指定
-        slidesPerView={8} // ハイドレーションエラー対策
+        slidesPerView={10} // ハイドレーションエラー対策
         loop={true}
-        spaceBetween={5}
+        spaceBetween={0}
         speed={1000} // スライドが切り替わる時の速度
         slidesPerGroup={3}
         navigation={{
@@ -106,8 +112,8 @@ export default function MultiViewSummary() {
             <div className={styles.slide_wrapper}>
               <Image
                 src={item.icon}
-                width={60}
-                height={60}
+                width={50}
+                height={50}
                 alt='Slider Image'
                 className={`${styles.slideImage} ${styles.slide_inner}`}
               />
@@ -122,22 +128,21 @@ export default function MultiViewSummary() {
           <FiArrowRightCircle />
         </div>
       </Swiper>
-      <div className={styles.button}>
+      <div className={styles.filter}>
         <div>
-          <button>ボタン</button>
+          <FaFilter />
         </div>
-        <div>
-          <button>ボタン</button>
-        </div>
+        <div className={styles.filter_text}>フィルター</div>
       </div>
-      <div className={styles.button}>
-        <div>
-          <button>ボタン</button>
-        </div>
-        <div>
-          <button>ボタン</button>
+      <div className={styles.container}>
+        <div>合計金額（税抜）を表示</div>
+        <div className={styles.toggle_switch}>
+          <input type='checkbox' id='postTypeToggle' className={styles.toggle_input} />
+          <label htmlFor='postTypeToggle' className={styles.toggle_label}></label>
         </div>
       </div>
     </div>
   )
 }
+
+export default MultiViewSummary
