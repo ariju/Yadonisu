@@ -1,0 +1,93 @@
+.slider_container {
+  background-color: white;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.slideWrapper {
+  width: 300px;
+  margin-top: 30px;
+}
+
+.itemInfo_title_wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.itemInfo_title {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.itemInfo_evaluation {
+  margin: 10px 0 0 10px;
+  font-size: 14px;
+}
+
+.itemInfo_place {
+  color: #969595;
+}
+
+.itemInfo_stay {
+  color: #969595;
+}
+
+.itemInfo_amount {
+  margin-top: 10px;
+  font-size: 14px;
+  display: inline-block;
+  border-bottom: 1px solid #000;
+  line-height: 1;
+}
+
+.slider_container_button_prev,
+.slider_container_button_next {
+  position: absolute;
+  top: 35%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.slider_container_button_prev svg,
+.slider_container_button_next svg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform-origin: center;
+}
+
+.slider_container_button_prev {
+  left: 0px;
+}
+
+.slider_container_button_next {
+  right: 50px;
+}
+
+.customPaginationClass {
+  background-color: #fff;
+}
+
+.slider_pagination {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  top: 220px !important;
+  left: -15px !important;
+}

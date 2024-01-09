@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import MultiViewSummary from '../components/MultiViewSummary'
+import SearchSuggestions from '../components/SearchSuggestions'
 import styles from '../styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -40,9 +41,8 @@ const Home = () => {
           </div>
         </div>
         <Header isScrolled={scrollY > 73} />
-        <div className={styles.Breadcrumb}>
-          <MultiViewSummary isScrolled={scrollY > 73} title={''} />
-        </div>
+        <MultiViewSummary isScrolled={scrollY > 73} title={''} />
+        <SearchSuggestions />
         <Footer />
       </main>
     </>
