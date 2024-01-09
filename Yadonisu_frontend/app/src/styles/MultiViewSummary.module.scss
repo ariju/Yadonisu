@@ -40,7 +40,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: red;
+  color: #000;
 }
 
 .swiper_button_prev svg,
@@ -62,9 +62,11 @@
 .scroll {
   background-color: #fff;
   position: fixed;
-  top: 100px;
+  top: 98px;
   left: 0;
   right: 0;
+  z-index: 10;
+  border-top: 1px solid #dddddd;
 }
 
 .filter {

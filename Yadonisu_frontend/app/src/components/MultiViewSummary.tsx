@@ -82,10 +82,26 @@ const images: ImagesItem[] = [
 const MultiViewSummary: FC<HeaderProps> = ({ isScrolled }) => {
   const slideSettings = {
     0: {
+      slidesPerView: 3,
+      spaceBetween: 0,
+    },
+    750: {
       slidesPerView: 4,
       spaceBetween: 0,
     },
+    1000: {
+      slidesPerView: 5,
+      spaceBetween: 0,
+    },
     1024: {
+      slidesPerView: 6,
+      spaceBetween: 0,
+    },
+    1040: {
+      slidesPerView: 7,
+      spaceBetween: 0,
+    },
+    1370: {
       slidesPerView: 10,
       spaceBetween: 0,
     },
