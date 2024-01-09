@@ -51,7 +51,6 @@ const SearchSuggestions = () => {
 
   return (
     <div className={styles.slider_container}>
-      {/* スワイパー１ */}
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -84,29 +83,6 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 1) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -117,7 +93,6 @@ const SearchSuggestions = () => {
         </Swiper>
       </div>
 
-      {/* スワイパー2 */}
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -126,47 +101,40 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
           {images2.map((src, index) => (
-            <SwiperSlide key={`slider1_${index}`}>
+            <SwiperSlide key={`slider2_${index}`}>
               <Image
                 src={src}
                 width={250}
                 height={250}
-                alt={`Slider 1 Image ${index}`}
+                alt={`Slider 2 Image ${index}`}
                 className={styles.slideImage}
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 2) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
 
-      {/* スワイパー3 */}
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -175,46 +143,39 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
           {images3.map((src, index) => (
-            <SwiperSlide key={`slider1_${index}`}>
+            <SwiperSlide key={`slider3_${index}`}>
               <Image
                 src={src}
                 width={250}
                 height={250}
-                alt={`Slider 1 Image ${index}`}
+                alt={`Slider 3 Image ${index}`}
                 className={styles.slideImage}
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー4 */}
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -223,10 +184,20 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
-          {images3.map((src, index) => (
+          {images1.map((src, index) => (
             <SwiperSlide key={`slider1_${index}`}>
               <Image
                 src={src}
@@ -237,32 +208,16 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー5 */}
+
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -271,46 +226,40 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
-          {images3.map((src, index) => (
-            <SwiperSlide key={`slider1_${index}`}>
+          {images2.map((src, index) => (
+            <SwiperSlide key={`slider2_${index}`}>
               <Image
                 src={src}
                 width={250}
                 height={250}
-                alt={`Slider 1 Image ${index}`}
+                alt={`Slider 2 Image ${index}`}
                 className={styles.slideImage}
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー6 */}
+
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -319,46 +268,39 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
           {images3.map((src, index) => (
-            <SwiperSlide key={`slider1_${index}`}>
+            <SwiperSlide key={`slider3_${index}`}>
               <Image
                 src={src}
                 width={250}
                 height={250}
-                alt={`Slider 1 Image ${index}`}
+                alt={`Slider 3 Image ${index}`}
                 className={styles.slideImage}
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー7 */}
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -367,10 +309,20 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
-          {images3.map((src, index) => (
+          {images1.map((src, index) => (
             <SwiperSlide key={`slider1_${index}`}>
               <Image
                 src={src}
@@ -381,32 +333,16 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー8 */}
+
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -415,46 +351,40 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
-          {images3.map((src, index) => (
-            <SwiperSlide key={`slider1_${index}`}>
+          {images2.map((src, index) => (
+            <SwiperSlide key={`slider2_${index}`}>
               <Image
                 src={src}
                 width={250}
                 height={250}
-                alt={`Slider 1 Image ${index}`}
+                alt={`Slider 2 Image ${index}`}
                 className={styles.slideImage}
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー9 */}
+
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -463,46 +393,39 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
           {images3.map((src, index) => (
-            <SwiperSlide key={`slider1_${index}`}>
+            <SwiperSlide key={`slider3_${index}`}>
               <Image
                 src={src}
                 width={250}
                 height={250}
-                alt={`Slider 1 Image ${index}`}
+                alt={`Slider 3 Image ${index}`}
                 className={styles.slideImage}
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー10 */}
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -511,10 +434,20 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
-          {images3.map((src, index) => (
+          {images1.map((src, index) => (
             <SwiperSlide key={`slider1_${index}`}>
               <Image
                 src={src}
@@ -525,32 +458,16 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー11 */}
+
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -559,46 +476,40 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
-          {images3.map((src, index) => (
-            <SwiperSlide key={`slider1_${index}`}>
+          {images2.map((src, index) => (
+            <SwiperSlide key={`slider2_${index}`}>
               <Image
                 src={src}
                 width={250}
                 height={250}
-                alt={`Slider 1 Image ${index}`}
+                alt={`Slider 2 Image ${index}`}
                 className={styles.slideImage}
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー12 */}
+
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -607,46 +518,39 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
           {images3.map((src, index) => (
-            <SwiperSlide key={`slider1_${index}`}>
+            <SwiperSlide key={`slider3_${index}`}>
               <Image
                 src={src}
                 width={250}
                 height={250}
-                alt={`Slider 1 Image ${index}`}
+                alt={`Slider 3 Image ${index}`}
                 className={styles.slideImage}
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー13 */}
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -655,10 +559,20 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
-          {images3.map((src, index) => (
+          {images1.map((src, index) => (
             <SwiperSlide key={`slider1_${index}`}>
               <Image
                 src={src}
@@ -669,32 +583,16 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー14 */}
+
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -703,46 +601,40 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
-          {images3.map((src, index) => (
-            <SwiperSlide key={`slider1_${index}`}>
+          {images2.map((src, index) => (
+            <SwiperSlide key={`slider2_${index}`}>
               <Image
                 src={src}
                 width={250}
                 height={250}
-                alt={`Slider 1 Image ${index}`}
+                alt={`Slider 2 Image ${index}`}
                 className={styles.slideImage}
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー15 */}
+
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -751,46 +643,39 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
           {images3.map((src, index) => (
-            <SwiperSlide key={`slider1_${index}`}>
+            <SwiperSlide key={`slider3_${index}`}>
               <Image
                 src={src}
                 width={250}
                 height={250}
-                alt={`Slider 1 Image ${index}`}
+                alt={`Slider 3 Image ${index}`}
                 className={styles.slideImage}
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー16 */}
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -799,10 +684,20 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
-          {images3.map((src, index) => (
+          {images1.map((src, index) => (
             <SwiperSlide key={`slider1_${index}`}>
               <Image
                 src={src}
@@ -813,32 +708,16 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー17 */}
+
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -847,46 +726,40 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
-          {images3.map((src, index) => (
-            <SwiperSlide key={`slider1_${index}`}>
+          {images2.map((src, index) => (
+            <SwiperSlide key={`slider2_${index}`}>
               <Image
                 src={src}
                 width={250}
                 height={250}
-                alt={`Slider 1 Image ${index}`}
+                alt={`Slider 2 Image ${index}`}
                 className={styles.slideImage}
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー18 */}
+
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -895,46 +768,39 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
           {images3.map((src, index) => (
-            <SwiperSlide key={`slider1_${index}`}>
+            <SwiperSlide key={`slider3_${index}`}>
               <Image
                 src={src}
                 width={250}
                 height={250}
-                alt={`Slider 1 Image ${index}`}
+                alt={`Slider 3 Image ${index}`}
                 className={styles.slideImage}
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー19 */}
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -943,10 +809,20 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
-          {images3.map((src, index) => (
+          {images1.map((src, index) => (
             <SwiperSlide key={`slider1_${index}`}>
               <Image
                 src={src}
@@ -957,32 +833,16 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー20 */}
+
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -991,46 +851,40 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
-          {images3.map((src, index) => (
-            <SwiperSlide key={`slider1_${index}`}>
+          {images2.map((src, index) => (
+            <SwiperSlide key={`slider2_${index}`}>
               <Image
                 src={src}
                 width={250}
                 height={250}
-                alt={`Slider 1 Image ${index}`}
+                alt={`Slider 2 Image ${index}`}
                 className={styles.slideImage}
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー21 */}
+
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -1039,46 +893,39 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
           {images3.map((src, index) => (
-            <SwiperSlide key={`slider1_${index}`}>
+            <SwiperSlide key={`slider3_${index}`}>
               <Image
                 src={src}
                 width={250}
                 height={250}
-                alt={`Slider 1 Image ${index}`}
+                alt={`Slider 3 Image ${index}`}
                 className={styles.slideImage}
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー22 */}
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -1087,10 +934,20 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
-          {images3.map((src, index) => (
+          {images1.map((src, index) => (
             <SwiperSlide key={`slider1_${index}`}>
               <Image
                 src={src}
@@ -1101,32 +958,16 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー23 */}
+
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -1135,46 +976,40 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
-          {images3.map((src, index) => (
-            <SwiperSlide key={`slider1_${index}`}>
+          {images2.map((src, index) => (
+            <SwiperSlide key={`slider2_${index}`}>
               <Image
                 src={src}
                 width={250}
                 height={250}
-                alt={`Slider 1 Image ${index}`}
+                alt={`Slider 2 Image ${index}`}
                 className={styles.slideImage}
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー24 */}
+
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -1183,46 +1018,39 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
           {images3.map((src, index) => (
-            <SwiperSlide key={`slider1_${index}`}>
+            <SwiperSlide key={`slider3_${index}`}>
               <Image
                 src={src}
                 width={250}
                 height={250}
-                alt={`Slider 1 Image ${index}`}
+                alt={`Slider 3 Image ${index}`}
                 className={styles.slideImage}
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
-      {/* スワイパー25 */}
       <div className={styles.slideWrapper}>
         <Swiper
           modules={[Navigation, Pagination]}
@@ -1231,10 +1059,20 @@ const SearchSuggestions = () => {
           centeredSlides={true}
           loop={true}
           speed={1000}
-          navigation
-          pagination={{ clickable: true }}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
         >
-          {images3.map((src, index) => (
+          {images1.map((src, index) => (
             <SwiperSlide key={`slider1_${index}`}>
               <Image
                 src={src}
@@ -1245,29 +1083,972 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
-          {items.map((item, index) => {
-            if (item.id === 3) {
-              return (
-                <div key={`item_${index}`} className={styles.itemInfo}>
-                  <div className={styles.itemInfo_title_wrapper}>
-                    {item.content.length > 20 ? (
-                      <div className={styles.itemInfo_title}>{`${item.content.substring(
-                        0,
-                        20,
-                      )}...`}</div>
-                    ) : (
-                      <div className={styles.itemInfo_title}>{item.content}</div>
-                    )}
-                    <div className={styles.itemInfo_evaluation}>★4.95</div>
-                  </div>
-                  <div className={styles.itemInfo_place}>{item.place}</div>
-                  <div className={styles.itemInfo_stay}>{item.stay}</div>
-                  <div className={styles.itemInfo_amount}>{item.amount}</div>
-                </div>
-              )
-            }
-            return null
-          })}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images2.map((src, index) => (
+            <SwiperSlide key={`slider2_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 2 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images3.map((src, index) => (
+            <SwiperSlide key={`slider3_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 3 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images1.map((src, index) => (
+            <SwiperSlide key={`slider1_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 1 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images2.map((src, index) => (
+            <SwiperSlide key={`slider2_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 2 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images3.map((src, index) => (
+            <SwiperSlide key={`slider3_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 3 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images1.map((src, index) => (
+            <SwiperSlide key={`slider1_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 1 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images2.map((src, index) => (
+            <SwiperSlide key={`slider2_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 2 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images3.map((src, index) => (
+            <SwiperSlide key={`slider3_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 3 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images1.map((src, index) => (
+            <SwiperSlide key={`slider1_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 1 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images2.map((src, index) => (
+            <SwiperSlide key={`slider2_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 2 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images3.map((src, index) => (
+            <SwiperSlide key={`slider3_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 3 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images1.map((src, index) => (
+            <SwiperSlide key={`slider1_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 1 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images2.map((src, index) => (
+            <SwiperSlide key={`slider2_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 2 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images3.map((src, index) => (
+            <SwiperSlide key={`slider3_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 3 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images1.map((src, index) => (
+            <SwiperSlide key={`slider1_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 1 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images2.map((src, index) => (
+            <SwiperSlide key={`slider2_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 2 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images3.map((src, index) => (
+            <SwiperSlide key={`slider3_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 3 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images1.map((src, index) => (
+            <SwiperSlide key={`slider1_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 1 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images2.map((src, index) => (
+            <SwiperSlide key={`slider2_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 2 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images3.map((src, index) => (
+            <SwiperSlide key={`slider3_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 3 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images1.map((src, index) => (
+            <SwiperSlide key={`slider1_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 1 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images2.map((src, index) => (
+            <SwiperSlide key={`slider2_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 2 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
+        </Swiper>
+      </div>
+
+      <div className={styles.slideWrapper}>
+        <Swiper
+          modules={[Navigation, Pagination]}
+          breakpoints={slideSettings}
+          slidesPerView={'auto'}
+          centeredSlides={true}
+          loop={true}
+          speed={1000}
+          navigation={{
+            prevEl: `.${styles.slider_container_button_prev}`,
+            nextEl: `.${styles.slider_container_button_next}`,
+          }}
+          pagination={{
+            clickable: true,
+            el: `.${styles.slider_pagination}`,
+            renderBullet: function (_index, className) {
+              return `<span class="${className} ${styles.customPaginationClass}"></span>`
+            },
+          }}
+          className={styles.mySwiperButtonPrev}
+        >
+          {images3.map((src, index) => (
+            <SwiperSlide key={`slider3_${index}`}>
+              <Image
+                src={src}
+                width={250}
+                height={250}
+                alt={`Slider 3 Image ${index}`}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          ))}
+          <div id='button_prev' className={styles.slider_container_button_prev}>
+            <IoIosArrowDropleftCircle />
+          </div>
+          <div id='button_next' className={styles.slider_container_button_next}>
+            <IoIosArrowDroprightCircle />
+          </div>
+          <div className={styles.slider_pagination}></div>
         </Swiper>
       </div>
     </div>
