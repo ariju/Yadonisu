@@ -42,7 +42,9 @@ const Home = () => {
         </div>
         <Header isScrolled={scrollY > 74} />
         <MultiViewSummary isScrolled={scrollY > 74} title={''} />
-        <SearchSuggestions />
+        <div style={{ marginTop: scrollY > 74 ? 208 : 0 }}>
+          <SearchSuggestions />
+        </div>
         <Footer />
       </main>
     </>
