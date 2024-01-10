@@ -83,6 +83,31 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
+
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -125,6 +150,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -167,6 +216,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -208,6 +281,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -250,6 +347,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -292,6 +413,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -333,6 +478,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -375,6 +544,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -417,6 +610,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -458,6 +675,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -500,6 +741,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -542,6 +807,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -583,6 +872,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -625,6 +938,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -667,6 +1004,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -708,6 +1069,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -750,6 +1135,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -792,6 +1201,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -833,6 +1266,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -875,6 +1332,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -917,6 +1398,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -958,6 +1463,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1000,6 +1529,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1042,6 +1595,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1083,6 +1660,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1125,6 +1726,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1167,6 +1792,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1208,6 +1857,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1250,6 +1923,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1292,6 +1989,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1333,6 +2054,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1375,6 +2120,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1417,6 +2186,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1458,6 +2251,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1500,6 +2317,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1542,6 +2383,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1583,6 +2448,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1625,6 +2514,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1667,6 +2580,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1708,6 +2645,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1750,6 +2711,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1792,6 +2777,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1833,6 +2842,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1875,6 +2908,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1917,6 +2974,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -1958,6 +3039,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -2000,6 +3105,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
@@ -2042,6 +3171,30 @@ const SearchSuggestions = () => {
               />
             </SwiperSlide>
           ))}
+
+          {items.map((item, index) => {
+            if (item.id === 1) {
+              return (
+                <div key={`item_${index}`} className={styles.itemInfo}>
+                  <div className={styles.itemInfo_title_wrapper}>
+                    {item.content.length > 20 ? (
+                      <div className={styles.itemInfo_title}>{`${item.content.substring(
+                        0,
+                        20,
+                      )}...`}</div>
+                    ) : (
+                      <div className={styles.itemInfo_title}>{item.content}</div>
+                    )}
+                    <div className={styles.itemInfo_evaluation}>★4.95</div>
+                  </div>
+                  <div className={styles.itemInfo_place}>{item.place}</div>
+                  <div className={styles.itemInfo_stay}>{item.stay}</div>
+                  <div className={styles.itemInfo_amount}>{item.amount}</div>
+                </div>
+              )
+            }
+            return null
+          })}
           <div id='button_prev' className={styles.slider_container_button_prev}>
             <IoIosArrowDropleftCircle />
           </div>
