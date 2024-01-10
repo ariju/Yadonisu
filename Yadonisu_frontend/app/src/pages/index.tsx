@@ -32,7 +32,7 @@ const Home = () => {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <main className={`${styles.main} ${inter.className}`}>
+      <main className={`${styles.main} ${inter.className}`} id='root'>
         <div id='link' className={styles.link}>
           <div className={styles.link_title}>
             <Link href='/about'>
@@ -40,8 +40,8 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        <Header isScrolled={scrollY > 73} />
-        <MultiViewSummary isScrolled={scrollY > 73} title={''} />
+        <Header isScrolled={scrollY > 74} />
+        <MultiViewSummary isScrolled={scrollY > 74} title={''} />
         <SearchSuggestions />
         <Footer />
       </main>

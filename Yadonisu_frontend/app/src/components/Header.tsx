@@ -1,7 +1,9 @@
-import React, { FC } from 'react'
+import React, { FC, useState } from 'react'
+import { CgProfile } from 'react-icons/cg'
 import { FiAlignJustify, FiGlobe } from 'react-icons/fi'
 import { IoIosSearch } from 'react-icons/io'
 import { SiAirbnb } from 'react-icons/si'
+import Modal from 'react-modal'
 import styles from '../styles/Header.module.scss'
 
 type HeaderProps = {
@@ -9,6 +11,14 @@ type HeaderProps = {
 }
 
 const Header: FC<HeaderProps> = ({ isScrolled }) => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggleModal = () => {
+    setIsOpen(!isOpen)
+  }
+
+  Modal.setAppElement('#root')
+
   return (
     <header className={`${styles._wrapper} ${isScrolled ? styles.scroll : ''}`}>
       <div className={styles._inner}>
@@ -45,7 +55,27 @@ const Header: FC<HeaderProps> = ({ isScrolled }) => {
                 <FiAlignJustify className={styles._list_right_icon} />
               </li>
               <li className={styles._list_right_item}>
-                <FiAlignJustify className={styles._list_right_icon} />
+                <CgProfile className={styles._list_right_icon} onClick={toggleModal} />
+                <Modal
+                  isOpen={isOpen}
+                  onRequestClose={toggleModal}
+                  contentLabel='Profile Modal'
+                  className={styles.customModal}
+                  overlayClassName={styles.customOverlay}
+                >
+                  <div className={styles.modalContent}>
+                    <div className={styles.loginSection}>
+                      <p>ログイン</p>
+                      <p>登録する</p>
+                    </div>
+                  </div>
+                  <div className={styles.modalWrapper}>
+                    <div className={styles.bottomLinks}>
+                      <p>下記に掲載</p>
+                      <p>ヘルプセンター</p>
+                    </div>
+                  </div>
+                </Modal>
               </li>
             </div>
           </ul>

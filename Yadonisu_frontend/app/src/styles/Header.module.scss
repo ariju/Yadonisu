@@ -7,6 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  white-space: nowrap;
 }
 
 ._icon_airbub {
@@ -124,4 +125,34 @@
   left: 0;
   right: 0;
   z-index: 10;
+}
+
+.customModal {
+  position: fixed;
+  top: 150px;
+  right: 50px;
+  background-color: white;
+  border: 1px solid #ccc;
+  box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-sizing: border-box;
+  line-height: 6vh;
+  z-index: 1;
+  width: 20%;
+}
+
+.customOverlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modalContent {
+  border-bottom: 1px solid #000;
+}
+
+.loginSection {
+  padding: 0 10px;
+}
+
+.bottomLinks {
+  padding: 0 10px;
 }
