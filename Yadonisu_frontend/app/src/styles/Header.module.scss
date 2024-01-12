@@ -142,10 +142,19 @@
 }
 
 .customOverlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
 }
 
 .modalContent {
+  border-bottom: 1px solid #000;
+}
+
+.modalWrapper {
   border-bottom: 1px solid #000;
 }
 
@@ -154,5 +163,13 @@
 }
 
 .bottomLinks {
+  padding: 0 10px;
+}
+
+.navigationLinks {
+  padding: 0 10px;
+}
+
+.centerLinks {
   padding: 0 10px;
 }
